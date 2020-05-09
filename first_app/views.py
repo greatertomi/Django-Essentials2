@@ -7,7 +7,7 @@ from first_app.models import Topic, Webpage, AccessRecord
 
 def index(request):
     Webpages_list = AccessRecord.objects.order_by('date')
-    
-    my_dict = {'insert_me': "Hello! I am from views.py with dances"}
-    return render(request, 'first_app/index.html', context=my_dict)
+    date_dict = {'access_records': Webpages_list}
+    # my_dict = {'insert_me': "Hello! I am from views.py with dances"}
+    return render(request, 'first_app/index.html', context=date_dict)
 
